@@ -14,7 +14,7 @@ node {
  stage('Input for deploy in production server') {            
    input('Do you want to deploy into production server proceed?')
         }
-
+ }
 notify('Job Completed')   
 } catch (err) {
   notify("Error ${err}")
