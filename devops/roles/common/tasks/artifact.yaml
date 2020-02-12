@@ -2,10 +2,10 @@
 - name: Create Dir to Downlaod Tomcat. 
   file: path=/etc/artifact state=directory
 
-- name: Download foo.conf
-  get_url:
-    url: http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war
-    dest: /etc/artifact/devops-0.0.1-SNAPSHOT.war
-    checksum: SHA-1:499e12aacc4052503df62bfa9a3452f12b1fff8f
-    force_basic_auth: yes
-    mode: '0440'
+- name: Download Tomcat using get_url
+     become: yes
+     get_url:
+       url: http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war
+       dest: /etc/artifact
+       mode: 0755
+       checksum: SHA-256:e419b25b5021d731381d136bcdcca60f18ec1d3c98c4d458471975b801dd622e
