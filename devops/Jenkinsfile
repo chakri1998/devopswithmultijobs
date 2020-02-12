@@ -56,7 +56,7 @@ node {
         def server= Artifactory.server 'Artifactory'
                     def uploadSpec= """{
                         "files": [{
-                        "pattern": "/root/.jenkins/workspace/devops/devops/target/*.war",
+                        "pattern": "target/*.war",
                         "target": "devops"}]
                     }"""
         server.upload(uploadSpec)
