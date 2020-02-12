@@ -2,12 +2,10 @@
 - name: Create Dir to Downlaod Tomcat. 
   file: path=/etc/artifact state=directory
 
-- name: Download Tomcat using get_url
-  get_url:
-       url: http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war
-       dest: /etc/artifact
-       mode: 0755
-       checksum: SHA-256:e419b25b5021d731381d136bcdcca60f18ec1d3c98c4d458471975b801dd622e
-       username: admin
-       password: password
+- maven_artifact:
+    group_id: com.mindtree
+    artifact_id: devops-0.0.1-SNAPSHOT.war
+    extension: war
+    repository_url: 'http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war'
+    dest: /etc/artifact/devops-0.0.1-SNAPSHOT.war
 
