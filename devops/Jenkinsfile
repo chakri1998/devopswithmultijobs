@@ -10,9 +10,7 @@ node {
  def project_path="devops/"
  
  dir(project_path) {
-    stage('Maven-Package') {
-   sh label: '', script: 'mvn package'
-  }  
+	 
   stage('Geting Ready For Ansible') {
   sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > index.html"
 }  
