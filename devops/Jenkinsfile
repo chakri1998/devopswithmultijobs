@@ -80,9 +80,9 @@ node {
 	 
  stage('Push Docker Image to docker repository') {  
            echo "Building image"
-          dockerImage = sudo docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
           docker.withRegistry( '', registryCredential ) {
-		  sudo dockerImage.push()
+		  dockerImage.push()
         }
       }	 
 
