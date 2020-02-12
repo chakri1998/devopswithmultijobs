@@ -8,7 +8,10 @@ node {
  def project_path="devops/"
  
  dir(project_path) {
-    
+       stage('Maven-Package') {
+   sh label: '', script: 'mvn package'
+  }
+
  
    stage('Docker-Stage-Deployment') {
    sh label: 'DOCKER DEPLOYMENT', script: 'docker-compose up -d --build'
