@@ -6,4 +6,5 @@
   get_url:
     url: http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war
     dest: /etc/artifact/devops-0.0.1-SNAPSHOT.war
+    checksum: SHA-1:499e12aacc4052503df62bfa9a3452f12b1fff8f 
     mode: '0440'
