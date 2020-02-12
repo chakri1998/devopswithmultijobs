@@ -4,6 +4,9 @@ node {
  stage('Git-Checkout') {
     git branch:'production_server', url:'https://github.com/chakri1998/devopswithbranch.git'
   }
+	  stage('Input for deploy in production server') {            
+   input('Do you want to deploy into production server proceed?')
+        }
  def project_path="devops/"
  
  dir(project_path) {
