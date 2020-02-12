@@ -17,7 +17,7 @@ node {
 
  
    stage('Docker-Stage-Deployment') {
-   sh label: 'DOCKER DEPLOYMENT', script: 'docker-compose up -d --build'
+   sh label: 'DOCKER DEPLOYMENT', script: 'sudo docker-compose up -d --build'
   }
 	 
 
