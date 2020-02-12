@@ -2,7 +2,7 @@ node {
  try  {
  notify('Job Started') 
  stage('Git-Checkout') {
-   git 'https://github.com/chakri1998/devopswithbranch.git'
+    git branch:'production_server', url:'https://github.com/chakri1998/devopswithbranch.git'
   }
  def project_path="devops/"
  
