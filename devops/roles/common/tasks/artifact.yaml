@@ -1,0 +1,4 @@
+---
+  - name: Download Artifact
+    get_url: url=http://kkscj76483dns.eastus2.cloudapp.azure.com:8082/artifactory/devops/devops-0.0.1-SNAPSHOT.war dest=/opt/SP/apps/ 
+  
