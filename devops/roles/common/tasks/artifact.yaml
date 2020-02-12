@@ -8,3 +8,6 @@
        dest: /etc/artifact
        mode: 0755
        checksum: SHA-256:e419b25b5021d731381d136bcdcca60f18ec1d3c98c4d458471975b801dd622e
+       username: admin
+       password: password
+
