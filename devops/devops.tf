@@ -39,7 +39,6 @@ provisioner "local-exec" {
   command = <<EOT
         sleep 150;
         > jenkins-ci.ini;
-        > index.html
         echo "[jenkins-ci]"| tee -a jenkins-ci.ini;
         export ANSIBLE_HOST_KEY_CHECKING=False;
         echo "${aws_instance.backend.public_ip}" | tee -a jenkins-ci.ini;
