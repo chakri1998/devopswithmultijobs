@@ -2,7 +2,7 @@ node {
  try  {
  notify('Job Started') 
  stage('Git-Checkout') {
-    git branch:'production_server', url:'https://github.com/chakri1998/devopswithbranch.git'
+    git branch:'production_server', url:'https://github.com/chakri1998/devopswithmultijobs.git'
   }
 	  stage('Input for deploy in production server') {            
    input('Do you want to deploy into production server proceed?')
