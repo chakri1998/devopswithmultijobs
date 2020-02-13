@@ -10,7 +10,7 @@ We used git as source code version control system which we store our source code
 2) Jenkins
 We used jenkins as CI/CD tool whic integrate all the tool we used for the project.
 
-3)Docker 
+3) Docker 
 It is a deployment tool we used to deploy our project in the test server. It is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files they can communicate with each other through well-defined channels and we used some docker features
 - Docker file
 - Docker compose
