@@ -8,7 +8,7 @@
 - name: Insert Index Page
   template:
    src: index.html
-   dest: /var/www/html/index.html
+   dest: {{ html_path }}/index.html
   notify:
   - restart nginx
       
