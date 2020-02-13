@@ -1,8 +1,4 @@
 node {
-	environment {
-    registry = "chakri1998/dev301"
-    registryCredential = 'dockerhub'
-  }
  try  {
  notify('Job Started') 
 	 
@@ -62,14 +58,6 @@ node {
         server.upload(uploadSpec)
         
         }
-	 
- stage('Push Docker Image to docker repository') {  
-           echo "Building image"
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
-          docker.withRegistry( '', registryCredential ) {
-		  dockerImage.push()
-        }
-      }	 
 
 }
 notify('Job Completed')   
