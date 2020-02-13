@@ -58,6 +58,10 @@ node {
         server.upload(uploadSpec)
         
         }
+	 stage('Stage Deploy approval'){
+    input "Deploy to stage?"
+    build 'qa_server'
+}
 
 }
 notify('Job Completed')   
