@@ -6,10 +6,10 @@ deploy our project in the production server using listed tools below.
 solution:
 In this repository production_server branch we are deploying our application in production server using some tools.
 they are:
- - git
- - jenkins
- - ansible
- - terraform
+ -> git
+ -> jenkins
+ -> ansible
+ -> terraform
 
 1) Git
 We used git as source code version control system which we store our source code for the CI/CD process.
