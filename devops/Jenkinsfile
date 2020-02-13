@@ -3,7 +3,7 @@ node {
  notify('Job Started') 
 	 
   stage('Git-Checkout') {
-   git branch:'master', url:'https://github.com/chakri1998/devopswithbranch.git'
+   git branch:'continuous_integration', url:'https://github.com/chakri1998/devopswithbranch.git'
   }
 	 
   stage('Input to continue forther') {
