@@ -7,12 +7,15 @@ node {
 	  stage('Input for deploy in production server') {            
    input('Do you want to deploy into production server proceed?')
         }
-	 	dir ('artifact') {
-	}
+	
  def project_path="devops/"
  
  dir(project_path) {
 
+	 stage('create artifact folder to store artifact'){
+	 sh label: 'Jenkins', script: "mkdir artifact"
+	 }
+	 
     stage('Jfrog Artifactory download'){
     def server= Artifactory.server 'Artifactory'
     def downloadSpec = """{
