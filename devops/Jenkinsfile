@@ -10,7 +10,8 @@ node {
  def project_path="devops/"
  
  dir(project_path) {
-	      
+	dir ('artifact') {
+	}
     stage('Jfrog Artifactory download'){
     def server= Artifactory.server 'Artifactory'
     def downloadSpec = """{
