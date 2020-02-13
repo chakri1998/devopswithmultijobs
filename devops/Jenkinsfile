@@ -20,6 +20,10 @@ node {
    sh label: 'DOCKER DEPLOYMENT', script: 'docker-compose up -d --build'
   }
 	 
+	stage('Stage Deploy approval'){
+    input "Deploy to stage?"
+    build 'production_server'
+} 
 
  }
 notify('Job Completed')   
