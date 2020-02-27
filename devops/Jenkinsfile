@@ -1,4 +1,10 @@
 node {
+	
+	environment {
+    registry = "chakri1998/dev301"
+    registryCredential = 'dockerhub'
+  }
+	
  try  {
  notify('Job Started') 
 
@@ -19,8 +25,14 @@ node {
    stage('Docker-Stage-Deployment') {
    sh label: 'DOCKER DEPLOYMENT', script: 'docker-compose up -d --build'
   }
+	
+	 stage('Pushing DockerImage to DockerHub') {
+      docker.withRegistry('', 'dockerhub') {
+            sh label: '', script: 'docker push kalyankkc/capstoneproject:$BUILD_NUMBER'
+          }
+  } 
 	 
-	stage('Stage Deploy approval'){
+   stage('Stage Deploy approval'){
     input "Deploy to stage?"
     build 'production_server'
 } 
