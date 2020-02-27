@@ -11,16 +11,6 @@ node {
  def project_path="devops/"
  
  dir(project_path) {
-
-	// stage('create artifact folder to store artifact'){
-  //def folder = 'artifact'
-//if( !folder.exists() ) {
-//  folder.mkdir()
-//}
-//else{
-//    sh label: 'Jenkins', script: "mkdir artifact"
-//   }
-	 //}
 	 
     stage('Jfrog Artifactory download'){
     def server= Artifactory.server 'Artifactory'
