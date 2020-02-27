@@ -34,7 +34,7 @@ node {
 	 
    stage('Stage Deploy approval'){
     input "Deploy to stage?"
-    build 'production_server'
+    build 'devops_production_server'
 } 
 
  }
