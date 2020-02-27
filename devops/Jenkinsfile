@@ -28,7 +28,7 @@ node {
 	
 	 stage('Pushing DockerImage to DockerHub') {
       docker.withRegistry('', 'dockerhub') {
-            sh label: '', script: 'docker push kalyankkc/capstoneproject:$BUILD_NUMBER'
+            sh label: '', script: 'docker push chakri1998/dev301:$BUILD_NUMBER'
           }
   } 
 	 
