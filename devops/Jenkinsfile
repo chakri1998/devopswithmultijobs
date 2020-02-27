@@ -13,9 +13,11 @@ node {
  dir(project_path) {
 
 	 stage('create artifact folder to store artifact'){
-   if( !artifact.exists() ) {
-  artifact.mkdirs()
-   }else{
+  def folder = artifact
+if( !folder.exists() ) {
+  folder.mkdirs()
+}
+else{
     sh label: 'Jenkins', script: "mkdir artifact"
    }
 	 }
