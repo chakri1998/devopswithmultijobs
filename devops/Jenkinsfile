@@ -1,10 +1,4 @@
 node {
-	
-	environment {
-    registry = "chakri1998/dev301"
-    registryCredential = 'dockerhub'
-  }
-	
  try  {
  notify('Job Started') 
 
