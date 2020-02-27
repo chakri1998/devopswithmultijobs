@@ -27,7 +27,7 @@ node {
         }
         }
 	 
-  stage("Quality Gate") {
+  stage("Sonar Quality Gate") {
   timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
     def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
     if (qg.status != 'OK') {
@@ -37,11 +37,11 @@ node {
 }
 	 
    stage('Maven-Test') {
-   sh label: '', script: 'mvn test'
+   sh label: 'Maven-Test', script: 'mvn test'
   }
   
    stage('Maven-Package') {
-   sh label: '', script: 'mvn package'
+   sh label: 'Maven-Package', script: 'mvn package'
   }
   
    stage('Archive-Artifacts') {
@@ -60,7 +60,7 @@ node {
         }
 	 stage('Stage Deploy approval'){
     input "Deploy to stage?"
-    build 'qa_server'
+    build 'devops_qa_server'
 }
 
 }
