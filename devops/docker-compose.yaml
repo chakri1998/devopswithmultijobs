@@ -2,6 +2,7 @@ version: '2'
 
 services:
   devops:
+    image: chakri1998/dev301:$BUILD_NUMBER
     build: . 
     ports:
       - '8085:8080'
